@@ -203,7 +203,7 @@ public class ImageResizer extends CordovaPlugin {
         System.out.println(ExifInterface);
         return exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
       } catch (IOException e) {
-           System.out.println('here12');
+           
         return ExifInterface.ORIENTATION_NORMAL;
       }
     }
