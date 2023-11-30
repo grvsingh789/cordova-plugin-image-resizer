@@ -86,7 +86,7 @@ public class ImageResizer extends CordovaPlugin {
                     // the bitmap
                     int rotation = getRoationDegrees(getRotation(uri));
                     Matrix matrix = new Matrix();
-                    if (rotation != 90) {matrix.preRotate(rotation);}
+                    if (rotation != 90) {matrix.preRotate(90);}
                     bitmap = Bitmap.createBitmap(
                             bitmap,
                             0,
