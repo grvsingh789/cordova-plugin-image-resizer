@@ -69,7 +69,7 @@ public class ImageResizer extends CordovaPlugin {
 
                 base64 = jsonObject.optBoolean("base64", false);
                 fit = jsonObject.optBoolean("fit", false);
-                fixRotation = jsonObject.optBoolean("fixRotation",false);
+                fixRotation = jsonObject.optBoolean("fixRotation",true);
 
                 Bitmap bitmap;
                 // load the image from uri
@@ -81,6 +81,7 @@ public class ImageResizer extends CordovaPlugin {
                 }
 
                 if(fixRotation){
+                    console.log('fixRotation',fixRotation)
                     // Get the exif rotation in degrees, create a transformation matrix, and rotate
                     // the bitmap
                     int rotation = getRoationDegrees(getRotation(uri));
@@ -183,6 +184,7 @@ public class ImageResizer extends CordovaPlugin {
     * @return the rotation in degrees
     */
     private int getRoationDegrees(int exifOrientation){
+        console.log('exifOrientation',exifOrientation);
       if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) { return 0; }
       else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {  return 0; }
       else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {  return 0; }
