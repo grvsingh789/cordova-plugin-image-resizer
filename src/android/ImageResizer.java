@@ -184,7 +184,7 @@ public class ImageResizer extends CordovaPlugin {
     * @return the rotation in degrees
     */
     private int getRoationDegrees(int exifOrientation){
-       System.out.println(exifOrientation);
+       System.out.println("exifOrientation"+ exifOrientation);
       if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) { return 0; }
       else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {  return 0; }
       else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {  return 0; }
@@ -200,7 +200,7 @@ public class ImageResizer extends CordovaPlugin {
     private int getRotation(String uriString){
       try {
         ExifInterface exif = new ExifInterface(uriString);
-        System.out.println(ExifInterface);
+       
         return exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
       } catch (IOException e) {
            
