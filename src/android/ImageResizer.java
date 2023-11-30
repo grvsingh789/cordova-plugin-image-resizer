@@ -86,7 +86,7 @@ public class ImageResizer extends CordovaPlugin {
                     // the bitmap
                     int rotation = getRoationDegrees(getRotation(uri));
                     Matrix matrix = new Matrix();
-                   
+                    if (rotation != 0f) {matrix.preRotate(rotation);}
                     bitmap = Bitmap.createBitmap(
                             bitmap,
                             0,
@@ -184,7 +184,7 @@ public class ImageResizer extends CordovaPlugin {
     * @return the rotation in degrees
     */
     private int getRoationDegrees(int exifOrientation){
-       System.out.println("exifOrientation"+ exifOrientation);
+      
       if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) { return 0; }
       else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {  return 0; }
       else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {  return 0; }
