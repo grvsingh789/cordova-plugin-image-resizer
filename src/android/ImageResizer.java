@@ -183,9 +183,9 @@ public class ImageResizer extends CordovaPlugin {
     * @return the rotation in degrees
     */
     private int getRoationDegrees(int exifOrientation){
-      if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) { return 90; }
-      else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {  return 180; }
-      else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {  return 270; }
+      if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) { return 0; }
+      else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {  return 0; }
+      else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {  return 0; }
       return 0;
     }
 
